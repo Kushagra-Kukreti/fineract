@@ -22,6 +22,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.apache.fineract.accounting.glaccount.data.GLAccountData;
 import org.apache.fineract.infrastructure.codes.api.CodeValuesApiResourceSwagger.GetCodeValuesDataResponse;
@@ -251,6 +252,8 @@ public final class LoanProductsApiResourceSwagger {
         public String buyDownFeeIncomeType;
         @Schema(example = "false")
         public Boolean merchantBuyDownFee;
+        @Schema(example = "false")
+        public Boolean enableChargeAmortization;
 
         // Interest Recalculation
         @Schema(example = "false")
@@ -773,6 +776,8 @@ public final class LoanProductsApiResourceSwagger {
         public StringEnumOptionData buyDownFeeIncomeType;
         @Schema(example = "false")
         public Boolean merchantBuyDownFee;
+        @Schema(example = "false")
+        public Boolean enableChargeAmortization;
     }
 
     @Schema(description = "GetLoanProductsTemplateResponse")
@@ -1145,6 +1150,7 @@ public final class LoanProductsApiResourceSwagger {
             }
 
             public Set<GetLoanProductsLiabilityAccountOptions> liabilityAccountOptions;
+            public List<GLAccountData> equityAccountOptions;
             public Set<GetLoanProductsAssetAccountOptions> assetAccountOptions;
             public Set<GetLoanProductsExpenseAccountOptions> expenseAccountOptions;
             public Set<GetLoanProductsIncomeAccountOptions> incomeAccountOptions;
@@ -1245,6 +1251,8 @@ public final class LoanProductsApiResourceSwagger {
         public StringEnumOptionData buyDownFeeStrategy;
         @Schema(example = "false")
         public Boolean merchantBuyDownFee;
+        @Schema(example = "false")
+        public Boolean enableChargeAmortization;
         @Schema(example = "FEE")
         public StringEnumOptionData buyDownFeeIncomeType;
         public List<StringEnumOptionData> buyDownFeeCalculationTypeOptions;
@@ -1537,6 +1545,7 @@ public final class LoanProductsApiResourceSwagger {
         @Schema(example = "false")
         public Boolean canUseForTopup;
         public GetLoanAccountingMappings accountingMappings;
+        public Map<String, List<GLAccountData>> accountingMappingOptions;
         public Set<GetLoanPaymentChannelToFundSourceMappings> paymentChannelToFundSourceMappings;
         public Set<GetLoanFeeToIncomeAccountMappings> feeToIncomeAccountMappings;
         public List<GetChargeOffReasonToExpenseAccountMappings> chargeOffReasonToExpenseAccountMappings;
@@ -1619,6 +1628,8 @@ public final class LoanProductsApiResourceSwagger {
         public StringEnumOptionData buyDownFeeIncomeType;
         @Schema(example = "false")
         public Boolean merchantBuyDownFee;
+        @Schema(example = "false")
+        public Boolean enableChargeAmortization;
         public List<StringEnumOptionData> buyDownFeeCalculationTypeOptions;
         public List<StringEnumOptionData> buyDownFeeStrategyOptions;
         public List<StringEnumOptionData> buyDownFeeIncomeTypeOptions;
@@ -1921,6 +1932,8 @@ public final class LoanProductsApiResourceSwagger {
         public String buyDownFeeIncomeType;
         @Schema(example = "false")
         public Boolean merchantBuyDownFee;
+        @Schema(example = "false")
+        public Boolean enableChargeAmortization;
     }
 
     public static final class AdvancedPaymentData {
